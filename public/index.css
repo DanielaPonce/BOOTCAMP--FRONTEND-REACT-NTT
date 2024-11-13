@@ -254,14 +254,14 @@ footer .social-icons a:hover {
     }
 
 
-    .header-container header .search-bar {
+    .header-container header .search-bar, .search-container {
         width: 100%;
         margin: 0;
     }
 
     .cart-icon {
         position: absolute;
-        top: 2rem;
+        top: 1.5rem;
         right: 2rem;
     }
 
@@ -271,7 +271,7 @@ footer .social-icons a:hover {
     }
     
     .body-content{
-        margin: 8rem 7rem 4rem;
+        margin: 10rem 7rem 4rem;
         gap: 2rem;
     }
 
