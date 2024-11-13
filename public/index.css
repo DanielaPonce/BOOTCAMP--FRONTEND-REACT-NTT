@@ -1,3 +1,4 @@
+/* buena estructura de clases */ 
 :root { 
     --white: #fff;
     --primary-color: #802c6e;
@@ -23,6 +24,7 @@ body {
 .header-container header {
     position: absolute;
     top: 5vh;
+    /* no dejemos comentarios de codigo no usado */
     /* left: 3.5vw; */
     width: 90vw;
     left: 50%;
@@ -67,6 +69,7 @@ header .search-container {
     position: absolute;
     top: -8px;
     right: -8px;
+    /* si ya tenemos un root con los colores deberiamos mantener ese estandar */ 
     background-color: red;
     color: var(--secondary-color);
     border-radius: 50%;
@@ -86,6 +89,7 @@ header .search-container {
 .search-bar select {
     padding: 0.7rem;
     font-size: 1rem;
+    /* si ya tenemos un root con los colores deberiamos mantener ese estandar */ 
     border: 1px solid #ccc;
     border-radius: 5px;
 }
@@ -178,6 +182,7 @@ header .search-container {
 }
 
 .product-details button:hover {
+    /* si ya tenemos un root con los colores deberiamos mantener ese estandar */ 
     background-color: #e59315;
 }
 
@@ -190,6 +195,7 @@ header .search-container {
   }
   
   .ver-mas:hover {
+    /* si ya tenemos un root con los colores deberiamos mantener ese estandar */ 
     color: #5d134d;
   }
   
@@ -214,6 +220,7 @@ footer .social-icons {
 }
 
 .social-icons svg:hover {
+    /* si ya tenemos un root con los colores deberiamos mantener ese estandar */ 
     color: #e59315;
     
 }
