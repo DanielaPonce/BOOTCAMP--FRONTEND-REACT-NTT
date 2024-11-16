@@ -1,16 +1,21 @@
 :root { 
     --white: #fff;
+    --background: #f4f4f4;
     --primary-color: #802c6e;
     --secondary-color: #f7aa35;
 
     --text-color: #3a3134;
+    --hover-link: #5d134d;
+    --border-color: #cccccc;
+    --hover-button-color: #e59315;
+    --alert-color: rgb(239, 28, 28);
 }
 
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: var(--background);
 }
 
 /* Header */
@@ -23,7 +28,6 @@ body {
 .header-container header {
     position: absolute;
     top: 5vh;
-    /* left: 3.5vw; */
     width: 90vw;
     left: 50%;
 
@@ -67,7 +71,7 @@ header .search-container {
     position: absolute;
     top: -8px;
     right: -8px;
-    background-color: red;
+    background-color: var(--alert-color);
     color: var(--secondary-color);
     border-radius: 50%;
     padding: 0.2rem 0.5rem;
@@ -86,7 +90,7 @@ header .search-container {
 .search-bar select {
     padding: 0.7rem;
     font-size: 1rem;
-    border: 1px solid #ccc;
+    border: 1px solid var(--border-color);
     border-radius: 5px;
 }
 
@@ -143,7 +147,7 @@ header .search-container {
 
 .product-details p {
     font-size: 0.9rem;
-    color: #555;
+    color: var(--text-color);
 }
 
 .product-details .category {
@@ -178,7 +182,7 @@ header .search-container {
 }
 
 .product-details button:hover {
-    background-color: #e59315;
+    background-color: var(--hover-button-color);
 }
 
 .ver-mas {
@@ -190,7 +194,7 @@ header .search-container {
   }
   
   .ver-mas:hover {
-    color: #5d134d;
+    color: var(--hover-link);
   }
   
 
@@ -207,15 +211,12 @@ footer .social-icons {
 
 }
 
-.social-icons svg {
-    transition: background-color 0.3s;
+.social-icons img {
     cursor: pointer;
-
 }
 
-.social-icons svg:hover {
-    color: #e59315;
-    
+.social-icons img:hover {
+    filter: invert(50%) sepia(90%) saturate(1000%) hue-rotate(350deg) brightness(95%) contrast(90%);
 }
 
 
@@ -278,6 +279,7 @@ footer .social-icons a:hover {
     .body-content a { 
         font-size: 18px;
         font-weight: 400;
+        min-width: 10rem;
     }
 
     .product-container {
