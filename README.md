@@ -36,16 +36,16 @@ npm install
 Para iniciar la aplicación en modo de desarrollo, utiliza el siguiente comando:
 
 ```bash
-npm start
+npm run dev
 ```
 
-Esto debería iniciar el proyecto en un entorno local. Generalmente, la aplicación estará disponible en [http://localhost:3000](http://localhost:3000) (o en el puerto configurado).
+Esto debería iniciar el proyecto en un entorno local. Generalmente, la aplicación estará disponible en [http://localhost:5173](http://localhost:5173) (o en el puerto configurado).
 
 ## Scripts Disponibles
 
 A continuación se describen algunos de los comandos de npm que puedes usar:
 
-- **`npm start`**: Inicia la aplicación en modo de desarrollo.
+- **`npm run dev`**: Inicia la aplicación en modo de desarrollo.
 
 ## Estructura del Proyecto
 
@@ -54,14 +54,18 @@ Aquí se muestra la estructura general del proyecto:
 ```
 📦BOOTCAMP-FIRST-PROJECT
  ┣ 📂public
- ┃ ┃ ┣ 📜index.css
- ┃ ┃ ┗ 📜index.html
+ ┃ ┃ ┗ 📂assets
  ┣ 📂src
- ┃ ┃ ┣ 📜index.js
- ┃ ┃ ┗ 📜Footer.js
+ ┃ ┃ ┣ 📂api
+ ┃ ┃ ┣ 📂mappers
+ ┃ ┃ ┣ 📂models
+ ┃ ┃ ┣ 📂styles
+ ┃ ┃ ┗ 📜index.ts
  ┣ 📜.gitignore
+ ┣ 📜index.html
+ ┣ 📜package-lock.json
  ┣ 📜README.md
- ┗ 📜package.json
+ ┗ 📜tsconfig.json
 ```
 
 
