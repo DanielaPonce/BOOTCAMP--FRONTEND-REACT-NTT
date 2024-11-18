@@ -1,0 +1,8 @@
+*.exe 
+
+node_modules
+
+dist/
+converage/
+
+build-config.*.yml
