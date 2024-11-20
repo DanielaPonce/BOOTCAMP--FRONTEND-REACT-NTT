@@ -1,3 +1,4 @@
+// lo ideal es separar la lógica de la vista para evitar tener un solo archivo javascript y aprovechar el uso de los módulos
 import './styles.css';
 
 let products = [];
@@ -10,6 +11,7 @@ const productsPerPage = 8;
 const searchBarElement = document.getElementById('searchBar');
 const categorySelectElement = document.getElementById('categoriesSelect');
 
+// estos servicios se podrían mover a una carpeta services
 async function loadAllProductsCategories() {
 	const response = await fetch('https://dummyjson.com/products/categories');
 	const fetchedCategories = await response.json();
