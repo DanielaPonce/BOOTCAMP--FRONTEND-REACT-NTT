@@ -1,3 +1,6 @@
+// tratemos de que el index quede lo más simple posible para ello podemos crear archivos que tengan las funciones que están definidas en este archivo algunos son utils, otros son builders otros son paginaciones, y así.
+
+// la paginación funciona de manera rara si primero se filtra por una categoría, a pesar de que no hay productos para paginar aparece en la parte inferior y permite incrementar el contador de páginas.
 import { fetchAllCategories } from './api/category.api';
 import { fetchAllProducts, fetchProductsByCategory } from './api/product.api';
 import { Category } from './models/category.types';
