@@ -1,7 +1,11 @@
-import './styles.css';
+import { fetchAllCategories } from './api/category.api';
+import { fetchAllProducts, fetchProductsByCategory } from './api/product.api';
+import { Category } from './models/category.types';
+import { Product } from './models/product.types';
+import './styles/styles.css';
 
-let products = [];
-let currentProducts = [];
+let products: Product[] = [];
+let currentProducts: Product[] = [];
 let currentPage = 0;
 let cartCounter = 0;
 
@@ -10,28 +14,8 @@ const productsPerPage = 8;
 const searchBarElement = document.getElementById('searchBar');
 const categorySelectElement = document.getElementById('categoriesSelect');
 
-async function loadAllProductsCategories() {
-	const response = await fetch('https://dummyjson.com/products/categories');
-	const fetchedCategories = await response.json();
-	return fetchedCategories;
-}
-
-async function loadAllProducts() {
-	const response = await fetch(`https://dummyjson.com/products`);
-	const { products: fetchedProducts } = await response.json();
-	return fetchedProducts;
-}
-
-async function loadProductsByCategory(category) {
-	const response = await fetch(
-		`https://dummyjson.com/products/category/${category}`
-	);
-	const { products: fetchedProducts } = await response.json();
-	return fetchedProducts;
-}
-
 /********* Inicio de Páginacion ********/
-function getProductsByPage(page) {
+function getProductsByPage(page: number) {
 	const startIndex = page * productsPerPage;
 	const endIndex = startIndex + productsPerPage;
 	currentProducts = products.slice(startIndex, endIndex);
@@ -54,25 +38,27 @@ function goToPreviousPage() {
 	setPagination();
 }
 
-document.getElementById('next-btn').addEventListener('click', goToNextPage);
-document.getElementById('prev-btn').addEventListener('click', goToPreviousPage);
+document.getElementById('next-btn')?.addEventListener('click', goToNextPage);
+document
+	.getElementById('prev-btn')
+	?.addEventListener('click', goToPreviousPage);
 
 /********* Fin de Páginacion ********/
 
-function createCategoriesOptionElement(category) {
+function createCategoriesOptionElement(category: Category) {
 	const categoryOption = document.createElement('option');
 	categoryOption.value = category.slug;
 	categoryOption.text = category.name;
 	return categoryOption;
 }
 
-function createProductCardElement(product) {
+function createProductCardElement(product: Product) {
 	const productCardElement = document.createElement('div');
 	productCardElement.className = 'product-card';
 
 	const imgElement = document.createElement('img');
 	imgElement.setAttribute('src', product.thumbnail);
-	imgElement.setAttribute('alt', product.tags[1]);
+	imgElement.setAttribute('alt', product.title);
 
 	const detailsElement = document.createElement('div');
 	detailsElement.className = 'product-details';
@@ -89,7 +75,7 @@ function createProductCardElement(product) {
 
 	const priceElement = document.createElement('div');
 	priceElement.className = 'price';
-	priceElement.textContent = product.price;
+	priceElement.textContent = `$${product.price}`;
 
 	const addToCarButton = document.createElement('button');
 	addToCarButton.textContent = 'Agregar al carrito';
@@ -108,8 +94,10 @@ function createProductCardElement(product) {
 	return productCardElement;
 }
 
-function populateProductsContainerElement(products) {
+function populateProductsContainerElement(products: Product[]) {
 	const productContainerElement = document.getElementById('productContainer');
+
+	if (productContainerElement == null) return;
 
 	while (productContainerElement.firstChild) {
 		productContainerElement.removeChild(productContainerElement.firstChild);
@@ -120,8 +108,10 @@ function populateProductsContainerElement(products) {
 	);
 }
 
-function populateProductsCategoriesSelect(categories) {
+function populateProductsCategoriesSelect(categories: Category[]) {
 	const categoriesSelectElement = document.getElementById('categoriesSelect');
+
+	if (categoriesSelectElement == null) return;
 
 	while (categoriesSelectElement.firstChild) {
 		categoriesSelectElement.removeChild(categoriesSelectElement.firstChild);
@@ -143,7 +133,8 @@ function populateProductsCategoriesSelect(categories) {
 
 function updateCartCounterElement() {
 	const cartCounterElement = document.getElementById('cardCounter');
-	cartCounterElement.textContent = cartCounter;
+	if (cartCounterElement == null) return;
+	cartCounterElement.textContent = `${cartCounter}`;
 }
 
 function addProductToCart() {
@@ -155,8 +146,8 @@ async function init() {
 	showLoader();
 
 	const [allProducts, allProductsCategories] = await Promise.all([
-		loadAllProducts(),
-		loadAllProductsCategories()
+		fetchAllProducts(),
+		fetchAllCategories()
 	]);
 
 	products = allProducts;
@@ -180,9 +171,11 @@ function setPagination() {
 		'paginator-content__number'
 	);
 
+	if (paginationNumberContainer == null) return;
+
 	const paginationNumberEl = document.createElement('p');
 	paginationNumberEl.id = 'numeber-page';
-	paginationNumberEl.textContent = currentPage + 1;
+	paginationNumberEl.textContent = `${currentPage + 1}`;
 
 	while (paginationNumberContainer.firstChild) {
 		paginationNumberContainer.removeChild(
@@ -194,8 +187,10 @@ function setPagination() {
 }
 
 function searchProduct() {
+	if (searchBarElement == null) return;
+
 	searchBarElement.addEventListener('input', (event) => {
-		const { value } = event.target;
+		const { value } = event.target as HTMLInputElement;
 
 		if (value.length == 0) {
 			populateProductsContainerElement(currentProducts);
@@ -213,15 +208,17 @@ function searchProduct() {
 }
 
 function handleCategorySelect() {
+	if (categorySelectElement == null) return;
+
 	categorySelectElement.addEventListener('change', async (event) => {
-		const { value: selectedCategory } = event.target;
+		const { value: selectedCategory } = event.target as HTMLSelectElement;
 
 		showLoader();
 
 		if (selectedCategory == 'all') {
-			products = await loadAllProducts('');
+			products = await fetchAllProducts();
 		} else {
-			products = await loadProductsByCategory(selectedCategory);
+			products = await fetchProductsByCategory(selectedCategory);
 		}
 
 		currentPage = 0;
@@ -237,9 +234,11 @@ function handleCategorySelect() {
 const loader = document.getElementById('loader');
 
 function showLoader() {
+	if (loader == null) return;
 	loader.style.display = 'flex';
 }
 
 function hideLoader() {
+	if (loader == null) return;
 	loader.style.display = 'none';
 }
