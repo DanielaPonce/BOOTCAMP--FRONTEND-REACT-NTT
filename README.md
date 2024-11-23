@@ -57,15 +57,21 @@ Aquí se muestra la estructura general del proyecto:
  ┃ ┃ ┗ 📂assets
  ┣ 📂src
  ┃ ┃ ┣ 📂api
+ ┃ ┃ ┣ 📂assets
+ ┃ ┃ ┣ 📂components
+ ┃ ┃ ┣ 📂context
+ ┃ ┃ ┣ 📂hooks
  ┃ ┃ ┣ 📂mappers
  ┃ ┃ ┣ 📂models
  ┃ ┃ ┣ 📂styles
- ┃ ┃ ┗ 📜index.ts
+ ┃ ┃ ┣ 📂utiles
+ ┃ ┃ ┗ 📜App.ts
  ┣ 📜.gitignore
  ┣ 📜index.html
  ┣ 📜package-lock.json
  ┣ 📜README.md
  ┗ 📜tsconfig.json
+ ┗ 📜vite.config.ts
 ```
 
 
