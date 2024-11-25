@@ -8,7 +8,7 @@ const SummaryPage = () => {
 	return (
 		<>
 			<Header />
-			<div className="body-content">
+			<div className="summary-container">
 				<CartTable />
 				<CartSummary />
 				<ShippingForm />

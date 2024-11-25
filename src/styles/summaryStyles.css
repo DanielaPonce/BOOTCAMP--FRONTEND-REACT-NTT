@@ -1,31 +1,133 @@
+.summary-container { 
+	margin: 6rem 15rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 3rem;
+}
+
+/* Estilos para CartTable  */
+.cart-table-container {
+	width: 100%;
+	overflow-x: scroll;
+}
+
 .cart-table {
 	width: 100%;
-	border-collapse: collapse;
 	margin-top: 1rem;
+	overflow-x: scroll;
 }
 
 .cart-table th,
 .cart-table td {
-	padding: 1rem;
-	border: 1px solid #ddd;
+	padding: 4px 1rem;
+	border: unset;
+	background-color: white;
+
 }
 
+
 .cart-table th {
-	background-color: var(--terciary-color);
+	background-color: var(--secondary-color);
 	color: var(--white);
 }
 
+.cart-table td button {
+	padding: 2px 4px;
+	border: 1px solid var(--border-color);
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+td img {
+	width: 5rem;
+	height: 5rem;
+	object-fit: contain;
+	margin: 0 auto;
+	display: flex;
+}
+
+td .quantity-content, .remove-button-content {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+}
+
+.remove-button-content button {
+	background-color: var(--button-error);
+	color: var(--white);
+	cursor: pointer;
+}
+
+/* ESTILOS PARA SHIPPING FORM */
 .shipping-form {
-	margin-top: 2rem;
+	width: 100%;
+	border-radius: 4px;
+	padding: 24px;
+	background-color: var(--white);
 	display: flex;
 	flex-direction: column;
 	gap: 1rem;
 }
 
-.buy-button {
-	background-color: #4caf50;
-	color: white;
-	padding: 0.8rem 1.5rem;
+.shipping-form h2 {
+	margin: 0 auto;
+}
+
+form .form-group {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+}
+
+.form-group input, select {
+	border: 1px solid var(--border-color);
+	padding: 0.7rem;
+	font-size: 1rem;
+	border-radius: 4px;
+}
+
+.form-group input:focus {
+	outline: none;
+	border-color: var(--text-color);
+}
+
+.form-group .error-message {
+	transition: all 0.3s;
+	color: var(--error-color);
+}
+
+form button {
+	background-color: var(--secondary-color);
+	color: var(--white);
+	padding: 0.7rem 1.5rem;
 	border: none;
+	border-radius: 5px;
+
+	font-size: 16px;
+	font-weight: 600;
 	cursor: pointer;
+	transition: background-color 0.3s;
+
+	margin: 0 auto;
+	min-width: 24rem;
+}
+
+
+
+@media only screen and (min-width: 740px) and (max-width: 1024px) { 
+	.summary-container {
+		margin: 6rem 2rem;
+	}
+
+}
+@media only screen and (max-width: 739px) { 
+	.summary-container {
+		margin: 3rem 2rem;
+	}
+	form button {
+		min-width: 100%;
+	}
 }

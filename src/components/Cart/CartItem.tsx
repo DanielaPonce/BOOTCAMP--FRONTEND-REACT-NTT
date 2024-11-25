@@ -32,18 +32,23 @@ const CartItem: FC<CartItemProps> = ({ item }) => {
 				/>
 			</td>
 			<td>{item.title}</td>
+			<td> s/. {item.price.toFixed(2)}</td>
 			<td>
-				<button onClick={handleDecrease}>-</button>
-				<span>{item.quantity}</span>
-				<button onClick={handleIncrease}>+</button>
+				<div className='quantity-content'>
+					<button onClick={handleDecrease}>-</button>
+					<span>{item.quantity}</span>
+					<button onClick={handleIncrease}>+</button>
+				</div>
 			</td>
 			<td>
-				<button
-					onClick={() => removeFromCart(item.id)}
-					className="remove-button"
-				>
-					Eliminar
-				</button>
+				<div className='remove-button-content'>
+					<button
+						onClick={() => removeFromCart(item.id)}
+						className="remove-button"
+					>
+						Eliminar
+					</button>
+				</div>
 			</td>
 		</tr>
 	);

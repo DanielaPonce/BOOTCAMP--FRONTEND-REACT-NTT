@@ -22,8 +22,8 @@ const Header: FC<HeaderProps> = ({ onSearch, onFilterCategory }) => {
 	return (
 		<div className="header-container">
 			<header>
-				<Link to={RoutesConstants.home} className="logo">
-					<img src="https://via.placeholder.com/40" alt="Logo" />
+				<Link to={RoutesConstants.home} className="logo" >
+					<img src="https://tofuu.getjusto.com/orioneat-local/resized2/FJjr9oorgze8bFTvY-200-x.webp" alt="Logo" width={45} height={45}/>
 					<h1>{StaticTexts.appTitle}</h1>
 				</Link>
 
