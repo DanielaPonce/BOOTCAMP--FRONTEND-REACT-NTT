@@ -1,12 +1,16 @@
 import { FC } from 'react';
 import { useCart } from '../../hooks/useCart';
+import { Link } from 'react-router';
+import { RoutesConstants } from '../../utils/routes';
 
 const CartCounter: FC = () => {
 	const { itemCount } = useCart();
 
 	return (
 		<div className="cart-icon">
-			<img src="/assets/cart-icon.svg" alt="cart icon" />
+			<Link to={RoutesConstants.summary}>
+				<img src="/assets/cart-icon.svg" alt="cart icon" />
+			</Link>
 
 			{itemCount > 0 ? (
 				<span id="cardCounter" className="cart-count">

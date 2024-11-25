@@ -2,17 +2,14 @@ import { FC } from 'react';
 import { Product } from '../../models/product.types';
 import { useCart } from '../../hooks/useCart';
 
-interface ProductCardProps extends Product {}
+const ProductCard: FC<Product> = (props) => {
+	const { id, title, description, price, thumbnail, category } = props;
 
-const ProductCard: FC<ProductCardProps> = ({
-	id,
-	title,
-	description,
-	price,
-	thumbnail,
-	category
-}) => {
 	const { addToCart } = useCart();
+
+	const handleAddToCart = () => {
+		addToCart(props);
+	};
 
 	return (
 		<div className="product-card">
@@ -22,7 +19,7 @@ const ProductCard: FC<ProductCardProps> = ({
 				<p>{description}</p>
 				<span className="category">{category}</span>
 				<div className="price">Precio: S/ {price}</div>
-				<button onClick={addToCart}>Agregar al carrito</button>
+				<button onClick={handleAddToCart}>Agregar al carrito</button>
 			</div>
 		</div>
 	);

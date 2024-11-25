@@ -3,6 +3,7 @@
 	--background: #f4f4f4;
 	--primary-color: #802c6e;
 	--secondary-color: #f7aa35;
+	--terciary-color: #802c6e;
 
 	--text-color: #3a3134;
 	--hover-link: #5d134d;
@@ -66,10 +67,13 @@ header .search-container {
 	display: flex;
 	align-items: center;
 	gap: 0.5rem;
+	text-decoration: none;
+	color: var(--text-color);
 }
 
 .logo img {
-	width: 40px;
+	width: 45px;
+	height: 45px;
 }
 
 .cart-icon {

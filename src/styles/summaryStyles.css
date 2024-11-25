@@ -1,0 +1,31 @@
+.cart-table {
+	width: 100%;
+	border-collapse: collapse;
+	margin-top: 1rem;
+}
+
+.cart-table th,
+.cart-table td {
+	padding: 1rem;
+	border: 1px solid #ddd;
+}
+
+.cart-table th {
+	background-color: var(--terciary-color);
+	color: var(--white);
+}
+
+.shipping-form {
+	margin-top: 2rem;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.buy-button {
+	background-color: #4caf50;
+	color: white;
+	padding: 0.8rem 1.5rem;
+	border: none;
+	cursor: pointer;
+}

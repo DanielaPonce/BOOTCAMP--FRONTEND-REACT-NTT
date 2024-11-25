@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { fetchAllProducts, fetchProductsByCategory } from '../api/product.api';
 import { Product } from '../models/product.types';
 import { Constants } from '../utils/constants';
+import { StaticTexts } from '../utils/staticTexts';
 
 export const useProducts = (category: string, search: string) => {
 	const [allProducts, setAllProducts] = useState<Product[]>([]);
@@ -15,7 +16,7 @@ export const useProducts = (category: string, search: string) => {
 		setIsLoading(true);
 		try {
 			let products: Product[] = [];
-			if (category === Constants.defaultSelectValue) {
+			if (category === StaticTexts.defaultSelectValue) {
 				products = await fetchAllProducts();
 			} else {
 				products = await fetchProductsByCategory(category);

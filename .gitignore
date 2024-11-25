@@ -12,12 +12,6 @@ dist
 dist-ssr
 *.local
 
-<<<<<<< HEAD
-dist/
-converage/
-
-build-config.*.yml
-=======
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
@@ -28,4 +22,3 @@ build-config.*.yml
 *.njsproj
 *.sln
 *.sw?
->>>>>>> feature/typescript

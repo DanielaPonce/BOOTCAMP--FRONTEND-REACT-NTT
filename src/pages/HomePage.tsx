@@ -7,11 +7,12 @@ import Spinner from '../components/Spinner/Spinner';
 import { CartProvider } from '../context/CartContext';
 import { useProducts } from '../hooks/useProducts';
 import { Constants } from '../utils/constants';
+import { StaticTexts } from '../utils/staticTexts';
 
 const HomePage: FC = () => {
 	const [search, setSearch] = useState('');
 	const [category, setCategory] = useState(
-		Constants.defaultSelectValue.valueOf()
+		StaticTexts.defaultSelectValue.valueOf()
 	);
 
 	const {
@@ -24,7 +25,7 @@ const HomePage: FC = () => {
 	} = useProducts(category, search);
 
 	return (
-		<CartProvider>
+		<>
 			<Header onSearch={setSearch} onFilterCategory={setCategory} />
 			{isLoading ? (
 				<Spinner />
@@ -43,7 +44,7 @@ const HomePage: FC = () => {
 				</div>
 			)}
 			<Footer />
-		</CartProvider>
+		</>
 	);
 };
 
