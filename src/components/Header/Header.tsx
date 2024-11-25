@@ -5,6 +5,7 @@ import { StaticTexts } from '../../utils/staticTexts';
 import CartCounter from './CartCounter';
 import CategoryDropdown from './CategoryDropdown';
 import SearchBar from './SearchBar';
+import { RoutesConstants } from '../../utils/routes';
 
 type HeaderProps = {
 	onSearch?: (query: string) => void;
@@ -21,7 +22,7 @@ const Header: FC<HeaderProps> = ({ onSearch, onFilterCategory }) => {
 	return (
 		<div className="header-container">
 			<header>
-				<Link to="/" className="logo">
+				<Link to={RoutesConstants.home} className="logo">
 					<img src="https://via.placeholder.com/40" alt="Logo" />
 					<h1>{StaticTexts.appTitle}</h1>
 				</Link>

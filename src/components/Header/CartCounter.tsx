@@ -9,7 +9,7 @@ const CartCounter: FC = () => {
 	return (
 		<div className="cart-icon">
 			<Link to={RoutesConstants.summary}>
-				<img src="/assets/cart-icon.svg" alt="cart icon" />
+				<img src="/src/assets/icons/cart-icon.svg" alt="cart icon" />
 			</Link>
 
 			{itemCount > 0 ? (

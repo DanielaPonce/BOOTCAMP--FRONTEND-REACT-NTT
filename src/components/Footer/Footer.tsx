@@ -3,9 +3,15 @@ const Footer = () => {
 		<footer>
 			<p>Síguenos en nuestras redes sociales</p>
 			<div className="social-icons">
-				<img src="/assets/fb-icon.svg" alt="facebook icon" />
-				<img src="/assets/instagram-icon.svg" alt="instagram icon" />
-				<img src="/assets/twitter-icon.svg" alt="twitter icon" />
+				<img src="/src//assets/icons/fb-icon.svg" alt="facebook icon" />
+				<img
+					src="/src/assets/icons/instagram-icon.svg"
+					alt="instagram icon"
+				/>
+				<img
+					src="/src/assets/icons/twitter-icon.svg"
+					alt="twitter icon"
+				/>
 			</div>
 			<p>© 2024 My Market. Todos los derechos reservados.</p>
 			<p>
