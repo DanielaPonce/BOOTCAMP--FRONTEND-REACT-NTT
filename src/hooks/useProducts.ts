@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { fetchAllProducts, fetchProductsByCategory } from '../api/product.api';
 import { Product } from '../models/product.types';
+// no se usa este import
 import { Constants } from '../utils/constants';
 import { StaticTexts } from '../utils/staticTexts';
 
@@ -10,6 +11,7 @@ export const useProducts = (category: string, search: string) => {
 	const [isLoading, setIsLoading] = useState(true);
 	const [currentPage, setCurrentPage] = useState(1);
 
+	// deber'ia estar fuera
 	const itemsPerPage = 8;
 
 	const loadProducts = async () => {
@@ -23,6 +25,7 @@ export const useProducts = (category: string, search: string) => {
 			}
 			setAllProducts(products);
 			setFilteredProducts(products);
+			// no n'umeros m'agicos
 			setCurrentPage(1);
 		} catch (error) {
 			console.log('Error al cargar los productos:', error);
