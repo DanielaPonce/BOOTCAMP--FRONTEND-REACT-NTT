@@ -12,12 +12,10 @@ const CartCounter: FC = () => {
 				<img src="/src/assets/icons/cart-icon.svg" alt="cart icon" />
 			</Link>
 
-			{itemCount > 0 ? (
+			{itemCount > 0 && (
 				<span id="cardCounter" className="cart-count">
 					{itemCount}
 				</span>
-			) : (
-				<></>
 			)}
 		</div>
 	);

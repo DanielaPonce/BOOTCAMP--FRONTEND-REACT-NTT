@@ -133,6 +133,7 @@ interface CartContextProps {
 const CartContext = createContext<CartContextProps | undefined>(undefined);
 
 export const CartProvider: FC<{ children: ReactNode }> = ({ children }) => {
+	// el provider solo deber'ia brindar los datos del storage y funci'on de actualizaci'on no deber'ia manipular el storage, esto deber'ia estar en otro archivo
 	const storedCart = localStorage.getItem(Constants.localStorageCartKey);
 	const initialCartState: CartState = storedCart
 		? JSON.parse(storedCart)

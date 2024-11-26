@@ -1,14 +1,13 @@
-import { FC } from 'react';
+import { FC, PropsWithChildren } from 'react';
 
 interface ButtonProps {
 	type?: 'button' | 'submit' | 'reset';
 	onClick?: () => void;
 	disabled?: boolean;
-	children: React.ReactNode;
 	className?: string;
 }
 
-const Button: FC<ButtonProps> = ({
+const Button: FC<PropsWithChildren<ButtonProps>> = ({
 	type = 'button',
 	onClick,
 	disabled = false,

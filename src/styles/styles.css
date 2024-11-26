@@ -1,3 +1,5 @@
+/* lo recomendable es que los estilos de cada componente esten al mismo nivel y no en un archivo global para que al final sea reutilizable de lo contrario ser'ia muy complicado de independizar */
+
 :root {
 	--white: #fff;
 	--background: #f4f4f4;

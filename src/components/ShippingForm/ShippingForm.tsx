@@ -29,6 +29,7 @@ const ShippingForm: FC = () => {
 		phoneNumber: ''
 	});
 
+	// por qu'e no crear un type fuera?
 	const [errors, setErrors] = useState<{ [key in keyof FormState]?: string }>(
 		{}
 	);
@@ -47,10 +48,12 @@ const ShippingForm: FC = () => {
 	const validate = (): boolean => {
 		const newErrors: { [key in keyof FormState]?: string } = {};
 
+		// que hace el regex? debe estar en enum para mayor claridad
 		if (!formState.firstName.trim() || /\d/.test(formState.firstName)) {
 			newErrors.firstName = 'Debe ingresar un valor válido';
 		}
 
+		// que hace el regex? debe estar en enum para mayor claridad
 		if (!formState.lastName.trim() || /\d/.test(formState.lastName)) {
 			newErrors.lastName = 'Debe ingresar un valor válido';
 		}
@@ -67,6 +70,7 @@ const ShippingForm: FC = () => {
 			newErrors.reference = 'Campo obligatorio';
 		}
 
+		// que hace el regex? debe estar en enum para mayor claridad
 		if (!formState.phoneNumber.trim()) {
 			newErrors.phoneNumber = 'Campo obligatorio';
 		} else if (!/^\d{9}$/.test(formState.phoneNumber)) {
