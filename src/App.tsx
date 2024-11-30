@@ -12,7 +12,7 @@ root.render(
 			<Routes>
 				<Route index element={<HomePage />} />
 				<Route
-					path={RoutesConstants.summary}
+					path={RoutesConstants.Summary}
 					element={<SummaryPage />}
 				/>
 			</Routes>

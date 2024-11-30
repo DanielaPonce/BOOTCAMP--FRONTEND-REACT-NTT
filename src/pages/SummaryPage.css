@@ -1,0 +1,19 @@
+.summary-container {
+	margin: 6rem 15rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 3rem;
+}
+
+@media only screen and (min-width: 740px) and (max-width: 1024px) {
+	.summary-container {
+		margin: 6rem 2rem;
+	}
+}
+@media only screen and (max-width: 739px) {
+	.summary-container {
+		margin: 3rem 2rem;
+	}
+}

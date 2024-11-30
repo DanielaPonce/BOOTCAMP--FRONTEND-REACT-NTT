@@ -1,10 +1,10 @@
 import { mapCategories } from '../mappers/category.mapper';
 import { Category } from '../models/category.types';
-import { Constants } from '../utils/constants';
+import { APIConstants } from '../utils/APIConstants';
 
 export async function fetchAllCategories(): Promise<Category[]> {
 	const response = await fetch(
-		`${Constants.API_BASE_URL}/products/categories`
+		`${APIConstants.API_BASE_URL}/products/categories`
 	);
 	if (!response.ok) {
 		throw new Error(`Error fetching categories, ${response.status}`);

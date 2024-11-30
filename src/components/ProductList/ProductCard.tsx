@@ -1,6 +1,8 @@
 import { FC } from 'react';
 import { Product } from '../../models/product.types';
 import { useCart } from '../../hooks/useCart';
+import './ProductCard.css';
+
 
 const ProductCard: FC<Product> = (props) => {
 	const { id, title, description, price, thumbnail, category } = props;

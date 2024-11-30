@@ -1,5 +1,5 @@
 export enum StaticTexts {
-	appTitle = 'My Market',
-	searchBarPlaceholder = 'Buscar productos...',
-	defaultSelectValue = 'all'
+	AppTitle = 'My Market',
+	SearchBarPlaceholder = 'Buscar productos...',
+	DefaultSelectValue = 'all'
 }

@@ -9,7 +9,7 @@ import {
 } from 'react';
 import { Product } from '../models/product.types';
 import { Actions } from '../utils/actions';
-import { Constants } from '../utils/constants';
+import { LocalStorageConstants } from '../utils/localStorageConstants';
 
 type CartAction =
 	| { type: Actions.ADD_TO_CART_TYPE; payload: Product }
@@ -133,19 +133,12 @@ interface CartContextProps {
 const CartContext = createContext<CartContextProps | undefined>(undefined);
 
 export const CartProvider: FC<{ children: ReactNode }> = ({ children }) => {
-	const storedCart = localStorage.getItem(Constants.localStorageCartKey);
+	const storedCart = localStorage.getItem(LocalStorageConstants.CartKey);
 	const initialCartState: CartState = storedCart
 		? JSON.parse(storedCart)
 		: initialState;
 
 	const [state, dispatch] = useReducer(cartReducer, initialCartState);
-
-	useEffect(() => {
-		localStorage.setItem(
-			Constants.localStorageCartKey,
-			JSON.stringify(state)
-		);
-	}, [state]);
 
 	return (
 		<CartContext.Provider value={{ state, dispatch }}>

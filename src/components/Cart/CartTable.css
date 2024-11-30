@@ -1,0 +1,52 @@
+.cart-table-container {
+	width: 100%;
+	overflow-x: scroll;
+}
+
+.cart-table {
+	width: 100%;
+	margin-top: 1rem;
+	overflow-x: scroll;
+}
+
+.cart-table th,
+.cart-table td {
+	padding: 4px 1rem;
+	border: unset;
+	background-color: white;
+
+}
+
+
+.cart-table th {
+	background-color: var(--secondary-color);
+	color: var(--white);
+}
+
+.cart-table td button {
+	padding: 2px 4px;
+	border: 1px solid var(--border-color);
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+td img {
+	width: 5rem;
+	height: 5rem;
+	object-fit: contain;
+	margin: 0 auto;
+	display: flex;
+}
+
+td .quantity-content, .remove-button-content {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+}
+
+.remove-button-content button {
+	background-color: var(--button-error);
+	color: var(--white);
+	cursor: pointer;
+}

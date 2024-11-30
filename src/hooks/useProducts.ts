@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { fetchAllProducts, fetchProductsByCategory } from '../api/product.api';
 import { Product } from '../models/product.types';
-import { Constants } from '../utils/constants';
 import { StaticTexts } from '../utils/staticTexts';
+import { StaticValues } from '../utils/staticValues';
 
 export const useProducts = (category: string, search: string) => {
 	const [allProducts, setAllProducts] = useState<Product[]>([]);
@@ -10,20 +10,18 @@ export const useProducts = (category: string, search: string) => {
 	const [isLoading, setIsLoading] = useState(true);
 	const [currentPage, setCurrentPage] = useState(1);
 
-	const itemsPerPage = 8;
-
 	const loadProducts = async () => {
 		setIsLoading(true);
 		try {
 			let products: Product[] = [];
-			if (category === StaticTexts.defaultSelectValue) {
+			if (category === StaticTexts.DefaultSelectValue) {
 				products = await fetchAllProducts();
 			} else {
 				products = await fetchProductsByCategory(category);
 			}
 			setAllProducts(products);
 			setFilteredProducts(products);
-			setCurrentPage(1);
+			setCurrentPage(StaticValues.FirstPaginatorPage);
 		} catch (error) {
 			console.log('Error al cargar los productos:', error);
 		} finally {
@@ -44,11 +42,13 @@ export const useProducts = (category: string, search: string) => {
 	}, [search, allProducts]);
 
 	const paginatedProducts = filteredProducts.slice(
-		(currentPage - 1) * itemsPerPage,
-		currentPage * itemsPerPage
+		(currentPage - 1) * StaticValues.ItemsPerPage,
+		currentPage * StaticValues.ItemsPerPage
 	);
 
-	const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
+	const totalPages = Math.ceil(
+		filteredProducts.length / StaticValues.ItemsPerPage
+	);
 
 	return {
 		products: paginatedProducts,

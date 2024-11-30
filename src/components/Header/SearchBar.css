@@ -1,0 +1,14 @@
+@media only screen and (max-width: 739px) {
+
+	.header-container header .search-bar,
+	.header-container header .search-bar input,
+	.search-container select,
+	.search-container {
+		width: 100%;
+		margin: 0;
+	}
+
+	.search-container {
+		flex-direction: column;
+	}
+}

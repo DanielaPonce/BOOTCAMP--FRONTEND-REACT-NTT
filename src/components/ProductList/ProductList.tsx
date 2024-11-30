@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import { Product } from '../../models/product.types';
 import ProductCard from './ProductCard';
+import './ProductList.css';
 
 type ProductListProps = {
 	products: Product[];

@@ -4,15 +4,13 @@ import Header from '../components/Header/Header';
 import Paginator from '../components/ProductList/Paginator';
 import ProductList from '../components/ProductList/ProductList';
 import Spinner from '../components/Spinner/Spinner';
-import { CartProvider } from '../context/CartContext';
 import { useProducts } from '../hooks/useProducts';
-import { Constants } from '../utils/constants';
 import { StaticTexts } from '../utils/staticTexts';
 
 const HomePage: FC = () => {
 	const [search, setSearch] = useState('');
 	const [category, setCategory] = useState(
-		StaticTexts.defaultSelectValue.valueOf()
+		StaticTexts.DefaultSelectValue.valueOf()
 	);
 
 	const {
@@ -32,14 +30,12 @@ const HomePage: FC = () => {
 			) : (
 				<div className="body-content">
 					<ProductList products={products} />
-					{showPagination ? (
+					{showPagination && (
 						<Paginator
 							currentPage={currentPage}
 							totalPages={totalPages}
 							onPageChange={setCurrentPage}
 						/>
-					) : (
-						<></>
 					)}
 				</div>
 			)}

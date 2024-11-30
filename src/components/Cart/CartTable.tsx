@@ -1,6 +1,7 @@
 import { useCart } from '../../hooks/useCart';
 import { FC } from 'react';
 import CartItem from './CartItem';
+import './CartTable.css';
 
 const CartTable: FC = () => {
 	const { cart } = useCart();

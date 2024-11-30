@@ -4,7 +4,8 @@ import { useCart } from '../../hooks/useCart';
 import { useNavigate } from 'react-router';
 import { RoutesConstants } from '../../utils/routes';
 import Button from '../Button/Button';
-
+import { RegexPatterns } from '../../utils/regexPatterns';
+import './ShippingForm.css';
 interface FormState {
 	firstName: string;
 	lastName: string;
@@ -13,6 +14,8 @@ interface FormState {
 	reference: string;
 	phoneNumber: string;
 }
+
+type ErrorsType = Partial<Record<keyof FormState, string>>;
 
 const ShippingForm: FC = () => {
 	const navigate = useNavigate();
@@ -29,9 +32,7 @@ const ShippingForm: FC = () => {
 		phoneNumber: ''
 	});
 
-	const [errors, setErrors] = useState<{ [key in keyof FormState]?: string }>(
-		{}
-	);
+	const [errors, setErrors] = useState<ErrorsType>({});
 
 	const handleInputChange = (
 		e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
@@ -45,13 +46,19 @@ const ShippingForm: FC = () => {
 	};
 
 	const validate = (): boolean => {
-		const newErrors: { [key in keyof FormState]?: string } = {};
+		const newErrors: ErrorsType = {};
 
-		if (!formState.firstName.trim() || /\d/.test(formState.firstName)) {
+		if (
+			!formState.firstName.trim() ||
+			RegexPatterns.OnlyLetters.test(formState.firstName)
+		) {
 			newErrors.firstName = 'Debe ingresar un valor válido';
 		}
 
-		if (!formState.lastName.trim() || /\d/.test(formState.lastName)) {
+		if (
+			!formState.lastName.trim() ||
+			RegexPatterns.OnlyLetters.test(formState.lastName)
+		) {
 			newErrors.lastName = 'Debe ingresar un valor válido';
 		}
 
@@ -69,7 +76,7 @@ const ShippingForm: FC = () => {
 
 		if (!formState.phoneNumber.trim()) {
 			newErrors.phoneNumber = 'Campo obligatorio';
-		} else if (!/^\d{9}$/.test(formState.phoneNumber)) {
+		} else if (!RegexPatterns.PhoneNumber.test(formState.phoneNumber)) {
 			newErrors.phoneNumber = 'Debe ser un número de 9 dígitos';
 		}
 
@@ -83,7 +90,7 @@ const ShippingForm: FC = () => {
 			console.log(formState);
 			alert('¡Su pedido se registró con éxito!');
 			clearCart();
-			navigate(RoutesConstants.home);
+			navigate(RoutesConstants.Home);
 		}
 	};
 

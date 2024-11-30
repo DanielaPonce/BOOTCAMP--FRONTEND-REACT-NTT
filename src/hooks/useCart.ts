@@ -1,9 +1,18 @@
+import { useEffect } from 'react';
 import { useCartContext } from '../context/CartContext';
 import { Product } from '../models/product.types';
 import { Actions } from '../utils/actions';
+import { LocalStorageConstants } from '../utils/localStorageConstants';
 
 export const useCart = () => {
 	const { state, dispatch } = useCartContext();
+
+	useEffect(() => {
+		localStorage.setItem(
+			LocalStorageConstants.CartKey,
+			JSON.stringify(state)
+		);
+	}, [state]);
 
 	const addToCart = (product: Product) =>
 		dispatch({ type: Actions.ADD_TO_CART_TYPE, payload: product });

@@ -6,6 +6,8 @@ import CartCounter from './CartCounter';
 import CategoryDropdown from './CategoryDropdown';
 import SearchBar from './SearchBar';
 import { RoutesConstants } from '../../utils/routes';
+import { Images } from '../../utils/images';
+import './Header.css';
 
 type HeaderProps = {
 	onSearch?: (query: string) => void;
@@ -22,9 +24,9 @@ const Header: FC<HeaderProps> = ({ onSearch, onFilterCategory }) => {
 	return (
 		<div className="header-container">
 			<header>
-				<Link to={RoutesConstants.home} className="logo" >
-					<img src="https://tofuu.getjusto.com/orioneat-local/resized2/FJjr9oorgze8bFTvY-200-x.webp" alt="Logo" width={45} height={45}/>
-					<h1>{StaticTexts.appTitle}</h1>
+				<Link to={RoutesConstants.Home} className="logo">
+					<img src={Images.Logo} alt="Logo" width={45} height={45} />
+					<h1>{StaticTexts.AppTitle}</h1>
 				</Link>
 
 				<div className="search-container">

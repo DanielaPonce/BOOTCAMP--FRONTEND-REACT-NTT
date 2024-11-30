@@ -1,0 +1,19 @@
+.paginator-container {
+	display: flex;
+	align-items: center;
+	column-gap: 16px;
+}
+
+.paginator-container button {
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	background-color: var(--white);
+	border-radius: 50%;
+    border: unset;
+	padding: 4px 8px;
+	cursor: pointer;
+    transition: all 0.3s;
+}
+
+.paginator-container button:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}

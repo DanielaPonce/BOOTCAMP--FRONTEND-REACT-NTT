@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import { Constants } from '../../utils/constants';
 import { StaticTexts } from '../../utils/staticTexts';
+import './SearchBar.css';
 
 type Props = {
 	onInputSearch: (search: string) => void;
@@ -11,7 +11,7 @@ const SearchBar: FC<Props> = ({ onInputSearch }) => {
 		<div className="search-bar">
 			<input
 				type="search"
-				placeholder={StaticTexts.searchBarPlaceholder}
+				placeholder={StaticTexts.SearchBarPlaceholder}
 				onInput={(e) =>
 					onInputSearch((e.target as HTMLInputElement).value)
 				}
