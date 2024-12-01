@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CartSummary Component matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="cart-summary"
+  >
+    <h3>
+      Total a pagar: S/ 123.45
+    </h3>
+  </div>
+</DocumentFragment>
+`;

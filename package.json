@@ -7,12 +7,25 @@
 	"scripts": {
 		"dev": "vite",
 		"build": "tsc && vite build",
-		"preview": "vite preview"
+		"preview": "vite preview",
+		"test": "jest --watchAll",
+		"test:coverage": "jest --coverage"
 	},
 	"author": "Daniela Ponce",
 	"license": "ISC",
 	"devDependencies": {
+		"@testing-library/jest-dom": "^6.6.3",
+		"@testing-library/react": "^16.0.1",
+		"@testing-library/user-event": "^14.5.2",
+		"@types/jest": "^29.5.14",
+		"identity-obj-proxy": "^3.0.0",
+		"jest": "^29.7.0",
+		"jest-environment-jsdom": "^29.7.0",
+		"jest-fetch-mock": "^3.0.3",
+		"ts-jest": "^29.2.5",
+		"ts-node": "^10.9.2",
 		"typescript": "^5.6.3",
+		"util": "^0.12.5",
 		"vite": "^5.4.11"
 	},
 	"dependencies": {

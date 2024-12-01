@@ -3,6 +3,7 @@ import CartTable from '../components/Cart/CartTable';
 import Footer from '../components/Footer/Footer';
 import Header from '../components/Header/Header';
 import ShippingForm from '../components/ShippingForm/ShippingForm';
+import './SummaryPage.css';
 
 const SummaryPage = () => {
 	return (

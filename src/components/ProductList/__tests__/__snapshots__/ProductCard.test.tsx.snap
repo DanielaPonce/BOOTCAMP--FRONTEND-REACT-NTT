@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductCard Component matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="product-card"
+  >
+    <img
+      alt="Producto de prueba"
+      src="https://via.placeholder.com/150"
+    />
+    <div
+      class="product-details"
+    >
+      <h3>
+        Producto de prueba
+      </h3>
+      <p>
+        Descripción del producto de prueba
+      </p>
+      <span
+        class="category"
+      >
+        Categoría de prueba
+      </span>
+      <div
+        class="price"
+      >
+        Precio: S/ 99.99
+      </div>
+      <button>
+        Agregar al carrito
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;

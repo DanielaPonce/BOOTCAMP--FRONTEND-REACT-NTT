@@ -1,5 +1,5 @@
 export const RegexPatterns: Record<RegexPatternsNames, RegExp> = {
-	OnlyLetters: /^[a-zA-Z]+$/,
+	OnlyLetters: /^[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ\s]+$/,
 	PhoneNumber: /^\d{9}$/
 };
 

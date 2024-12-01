@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer Component matches snapshot 1`] = `
+<DocumentFragment>
+  <footer>
+    <p>
+      Síguenos en nuestras redes sociales
+    </p>
+    <div
+      class="social-icons"
+    >
+      <img
+        alt="facebook icon"
+        src="/src//assets/icons/fb-icon.svg"
+      />
+      <img
+        alt="instagram icon"
+        src="/src/assets/icons/instagram-icon.svg"
+      />
+      <img
+        alt="twitter icon"
+        src="/src/assets/icons/twitter-icon.svg"
+      />
+    </div>
+    <p>
+      © 2024 My Market. Todos los derechos reservados.
+    </p>
+    <p>
+      <a
+        href="#"
+      >
+        Política de privacidad
+      </a>
+       |
+      <a
+        href="#"
+      >
+        Términos de uso
+      </a>
+       | 
+      <a
+        href="#"
+      >
+        Contacto
+      </a>
+    </p>
+  </footer>
+</DocumentFragment>
+`;

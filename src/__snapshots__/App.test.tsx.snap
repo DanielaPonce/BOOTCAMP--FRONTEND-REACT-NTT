@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App Component matches snapshot for HomePage 1`] = `
+<DocumentFragment>
+  <div>
+    HomePage
+    <a
+      data-discover="true"
+      href="/summary"
+    >
+      Go to Summary
+    </a>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`App Component matches snapshot for SummaryPage 1`] = `
+<DocumentFragment>
+  <div>
+    SummaryPage
+    <a
+      data-discover="true"
+      href="/"
+    >
+      Go to Home
+    </a>
+  </div>
+</DocumentFragment>
+`;

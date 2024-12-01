@@ -1,0 +1,128 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ShippingForm Component matches snapshot 1`] = `
+<DocumentFragment>
+  <form
+    class="shipping-form"
+  >
+    <h2>
+      Información de Envío
+    </h2>
+    <div
+      class="form-group"
+    >
+      <label
+        for="firstName"
+      >
+        Nombres
+      </label>
+      <input
+        id="firstName"
+        name="firstName"
+        placeholder="Ingresa tus nombres"
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      class="form-group"
+    >
+      <label
+        for="lastName"
+      >
+        Apellidos
+      </label>
+      <input
+        id="lastName"
+        name="lastName"
+        placeholder="Ingresa tus apellidos"
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      class="form-group"
+    >
+      <label
+        for="district"
+      >
+        Distrito
+      </label>
+      <select
+        id="district"
+        name="district"
+      >
+        <option
+          value=""
+        >
+          Selecciona tu distrito
+        </option>
+        <option
+          value="San Isidro"
+        >
+          San Isidro
+        </option>
+        <option
+          value="Miraflores"
+        >
+          Miraflores
+        </option>
+      </select>
+    </div>
+    <div
+      class="form-group"
+    >
+      <label
+        for="address"
+      >
+        Dirección
+      </label>
+      <input
+        id="address"
+        name="address"
+        placeholder="Ingresa tu dirección"
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      class="form-group"
+    >
+      <label
+        for="reference"
+      >
+        Referencia
+      </label>
+      <input
+        id="reference"
+        name="reference"
+        placeholder="Referencia de tu dirección"
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      class="form-group"
+    >
+      <label
+        for="phoneNumber"
+      >
+        Celular
+      </label>
+      <input
+        id="phoneNumber"
+        name="phoneNumber"
+        placeholder="Ingresa tu número de celular"
+        type="text"
+        value=""
+      />
+    </div>
+    <button
+      class="btn submit-button "
+      type="submit"
+    >
+      Comprar
+    </button>
+  </form>
+</DocumentFragment>
+`;

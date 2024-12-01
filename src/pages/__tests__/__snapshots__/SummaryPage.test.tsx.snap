@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SummaryPage Component matches snapshot 1`] = `
+<DocumentFragment>
+  <header>
+    Header
+  </header>
+  <div
+    class="summary-container"
+  >
+    <div>
+      CartTable
+    </div>
+    <div>
+      CartSummary
+    </div>
+    <form>
+      ShippingForm
+    </form>
+  </div>
+  <footer>
+    Footer
+  </footer>
+</DocumentFragment>
+`;

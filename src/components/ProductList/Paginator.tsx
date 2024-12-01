@@ -1,4 +1,4 @@
-import './Paginator.css'
+import './Paginator.css';
 
 type PaginatorProps = {
 	currentPage: number;

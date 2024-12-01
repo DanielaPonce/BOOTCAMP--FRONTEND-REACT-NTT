@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CartCounter Component matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="cart-icon"
+  >
+    <a
+      data-discover="true"
+      href="/summary"
+    >
+      <img
+        alt="cart icon"
+        src="/src/assets/icons/cart-icon.svg"
+      />
+    </a>
+    <span
+      class="cart-count"
+      id="cardCounter"
+    >
+      3
+    </span>
+  </div>
+</DocumentFragment>
+`;

@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductList Component matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="product-container"
+    id="productContainer"
+  >
+    <div
+      data-testid="product-card"
+    />
+    <div
+      data-testid="product-card"
+    />
+  </div>
+</DocumentFragment>
+`;

@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CategoryDropdown Component matches snapshot 1`] = `
+<DocumentFragment>
+  <select>
+    <option
+      selected=""
+      value="all"
+    >
+      Todas las categorias
+    </option>
+    <option
+      value="electronics"
+    >
+      Electronics
+    </option>
+    <option
+      value="books"
+    >
+      Books
+    </option>
+    <option
+      value="clothing"
+    >
+      Clothing
+    </option>
+  </select>
+</DocumentFragment>
+`;

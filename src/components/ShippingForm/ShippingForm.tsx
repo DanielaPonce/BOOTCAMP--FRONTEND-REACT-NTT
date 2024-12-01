@@ -50,14 +50,14 @@ const ShippingForm: FC = () => {
 
 		if (
 			!formState.firstName.trim() ||
-			RegexPatterns.OnlyLetters.test(formState.firstName)
+			!RegexPatterns.OnlyLetters.test(formState.firstName)
 		) {
 			newErrors.firstName = 'Debe ingresar un valor válido';
 		}
 
 		if (
 			!formState.lastName.trim() ||
-			RegexPatterns.OnlyLetters.test(formState.lastName)
+			!RegexPatterns.OnlyLetters.test(formState.lastName)
 		) {
 			newErrors.lastName = 'Debe ingresar un valor válido';
 		}
@@ -87,7 +87,6 @@ const ShippingForm: FC = () => {
 	const handleSubmit = (e: React.FormEvent) => {
 		e.preventDefault();
 		if (validate()) {
-			console.log(formState);
 			alert('¡Su pedido se registró con éxito!');
 			clearCart();
 			navigate(RoutesConstants.Home);

@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HomePage Component matches snapshot 1`] = `
+<DocumentFragment>
+  <div>
+    <input
+      data-testid="search-input"
+    />
+    <select
+      data-testid="category-select"
+    >
+      <option
+        value="all"
+      >
+        All
+      </option>
+      <option
+        value="category1"
+      >
+        Category 1
+      </option>
+    </select>
+  </div>
+  <div
+    class="body-content"
+  >
+    <div>
+      <div>
+        Product 1
+      </div>
+    </div>
+  </div>
+  <footer>
+    Footer
+  </footer>
+</DocumentFragment>
+`;

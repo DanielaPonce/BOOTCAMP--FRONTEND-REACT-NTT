@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header Component matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="header-container"
+  >
+    <header>
+      <a
+        class="logo"
+        data-discover="true"
+        href="/"
+      >
+        <img
+          alt="Logo"
+          height="45"
+          src="/src/assets/logo/logo.webp"
+          width="45"
+        />
+        <h1>
+          My Market
+        </h1>
+      </a>
+      <div
+        class="search-container"
+      >
+        <input
+          data-testid="search-bar"
+          placeholder="Search"
+          type="search"
+        />
+        <select
+          data-testid="category-dropdown"
+        >
+          <option
+            value="category1"
+          >
+            Category 1
+          </option>
+          <option
+            value="category2"
+          >
+            Category 2
+          </option>
+        </select>
+        <div
+          data-testid="cart-counter"
+        >
+          CartCounter
+        </div>
+      </div>
+    </header>
+  </div>
+</DocumentFragment>
+`;
