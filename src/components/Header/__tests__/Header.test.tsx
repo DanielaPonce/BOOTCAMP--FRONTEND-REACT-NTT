@@ -4,6 +4,7 @@ import { useCategories } from '../../../hooks/useCategories';
 import { RoutesConstants } from '../../../utils/routes';
 import Header from '../Header';
 import { Category } from '../../../models/category.types';
+import { AuthProvider } from '../../../context/AuthContext';
 
 jest.mock('../../../hooks/useCategories', () => ({
 	__esModule: true,
@@ -59,7 +60,9 @@ describe('Header Component', () => {
 	test('renders Header with logo, search bar, category dropdown, and cart counter', () => {
 		render(
 			<MemoryRouter>
-				<Header />
+				<AuthProvider>
+					<Header />
+				</AuthProvider>
 			</MemoryRouter>
 		);
 
@@ -75,7 +78,9 @@ describe('Header Component', () => {
 	test('hides search bar and dropdown on /summary route', () => {
 		render(
 			<MemoryRouter initialEntries={[RoutesConstants.Summary]}>
-				<Header />
+				<AuthProvider>
+					<Header />
+				</AuthProvider>
 			</MemoryRouter>
 		);
 
@@ -91,7 +96,9 @@ describe('Header Component', () => {
 		const mockOnSearch = jest.fn();
 		render(
 			<MemoryRouter>
-				<Header onSearch={mockOnSearch} />
+				<AuthProvider>
+					<Header onSearch={mockOnSearch} />
+				</AuthProvider>
 			</MemoryRouter>
 		);
 
@@ -105,7 +112,9 @@ describe('Header Component', () => {
 		const mockOnFilterCategory = jest.fn();
 		render(
 			<MemoryRouter>
-				<Header onFilterCategory={mockOnFilterCategory} />
+				<AuthProvider>
+					<Header onFilterCategory={mockOnFilterCategory} />
+				</AuthProvider>
 			</MemoryRouter>
 		);
 
@@ -118,7 +127,9 @@ describe('Header Component', () => {
 	test('matches snapshot', () => {
 		const { asFragment } = render(
 			<MemoryRouter>
-				<Header />
+				<AuthProvider>
+					<Header />
+				</AuthProvider>
 			</MemoryRouter>
 		);
 		expect(asFragment()).toMatchSnapshot();
