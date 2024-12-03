@@ -8,9 +8,9 @@
 	position: absolute;
 	top: 5vh;
 	width: 90vw;
-	left: 50%; 
+	left: 50%;
 
-	transform: translate(-50%, 7%); 
+	transform: translate(-50%, 7%);
 	box-shadow: 5px 5px 15px rgba(0, 0, 0, 22%);
 	background-color: var(--white);
 	border-radius: 25px;
@@ -22,11 +22,29 @@
 	align-items: center;
 }
 
+.header-container header .left-side {
+	display: flex;
+	column-gap: 16px;
+	align-items: center;
+}
+
 header .search-container {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	gap: 8px;
+}
+
+header .logout-button {
+	background-color: var(--secondary-color);
+	color: var(--white);
+	padding: 0.7rem 1.5rem;
+	border: none;
+	border-radius: 5px;
+	font-weight: 600;
+	cursor: pointer;
+	transition: background-color 0.3s;
+	margin: 0 auto;
 }
 
 .logo {
@@ -42,12 +60,10 @@ header .search-container {
 	color: var(--hover-button-color);
 }
 
-
 @media only screen and (min-width: 740px) and (max-width: 991px) {
 	.logo h1 {
 		font-size: 24px;
 	}
-	
 }
 
 @media only screen and (max-width: 739px) {

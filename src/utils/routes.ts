@@ -1,4 +1,5 @@
 export enum RoutesConstants {
 	Home = '/',
-	Summary = '/summary'
+	Summary = '/summary',
+	Login = '/login'
 }
