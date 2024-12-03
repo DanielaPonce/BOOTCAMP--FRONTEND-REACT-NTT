@@ -40,6 +40,8 @@ export const AuthProvider: FC<PropsWithChildren> = ({ children }) => {
 			setUser(loginData.username);
 			storageUtils.setUser(loginData.username);
 		} catch (error) {
+			setIsAuthenticated(false);
+			setUser(null);
 			console.log(error);
 			throw new Error(
 				error instanceof Error ? error.message : 'Login failed'
