@@ -80,6 +80,7 @@ describe('App Component', () => {
 		expect(screen.queryByText('SummaryPage')).not.toBeInTheDocument();
 	});
 
+	// no es un caso que aporte
 	test('matches snapshot for HomePage', () => {
 		const { asFragment } = render(
 			<MemoryRouter initialEntries={['/']}>
@@ -91,6 +92,7 @@ describe('App Component', () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	// no es un caso que aporte
 	test('matches snapshot for SummaryPage', () => {
 		const { asFragment } = render(
 			<MemoryRouter initialEntries={[RoutesConstants.Summary]}>
