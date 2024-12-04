@@ -1,3 +1,5 @@
+// falta test
+// el bot'on de login no reacciona si dejo en blanco el usuario y contrase;a, al menos deber'ia mostrar un mensaje de error
 import React, { FormEvent, useState } from 'react';
 import ForgotPasswordModal from '../components/ForgotPasswordModal/ForgotPasswordModal';
 import './LoginPage.css';

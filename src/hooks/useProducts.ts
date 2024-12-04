@@ -1,3 +1,4 @@
+// el p'aginado debe ser un hook aparte
 import { useEffect, useState } from 'react';
 import { fetchAllProducts, fetchProductsByCategory } from '../api/product.api';
 import { Product } from '../models/product.types';
