@@ -23,6 +23,7 @@ export const useProducts = (category: string, search: string) => {
 			setFilteredProducts(products);
 			setCurrentPage(StaticValues.FirstPaginatorPage);
 		} catch (error) {
+			// falta cubrir este caso
 			console.log('Error al cargar los productos:', error);
 		} finally {
 			setIsLoading(false);

@@ -40,6 +40,7 @@ const ShippingForm: FC = () => {
 		const { name, value } = e.target;
 		setFormState({ ...formState, [name]: value });
 
+		// falta cubrir este caso
 		if (errors[name as keyof FormState]) {
 			setErrors({ ...errors, [name]: undefined });
 		}

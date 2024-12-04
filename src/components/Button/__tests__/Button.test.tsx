@@ -2,6 +2,7 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import Button from '../Button';
 
 describe('Button Component', () => {
+	// el snapshot reemplaza este test
 	test('renders correctly with default props', () => {
 		const text = 'Add to cart';
 		render(<Button>{text}</Button>);
@@ -31,7 +32,7 @@ describe('Button Component', () => {
 		expect(button).toHaveClass('btn-disabled');
 	});
 
-	test('calls onClick when the button is clicked', () => {
+	test('should call onClick method when the button is clicked', () => {
 		const handleClick = jest.fn();
 		render(<Button onClick={handleClick}>Click Me</Button>);
 		const button = screen.getByRole('button');
@@ -39,7 +40,7 @@ describe('Button Component', () => {
 		expect(handleClick).toHaveBeenCalledTimes(1);
 	});
 
-	test('does not call onClick when the button is disabled', () => {
+	test('should not call onClick when the button is disabled', () => {
 		const handleClick = jest.fn();
 		render(
 			<Button onClick={handleClick} disabled={true}>
@@ -51,6 +52,7 @@ describe('Button Component', () => {
 		expect(handleClick).not.toHaveBeenCalled();
 	});
 
+	// este test no es necesario no evalua algo diferente que el test 67
 	test('renders children correctly', () => {
 		render(
 			<Button>
