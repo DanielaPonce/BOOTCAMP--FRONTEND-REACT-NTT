@@ -80,10 +80,12 @@ const cartReducer = (state: CartState, action: CartAction): CartState => {
 			const filteredCart = state.cart.filter(
 				(item) => item.id !== action.payload
 			);
+			// falta cubrir este caso
 			const updatedTotal = filteredCart.reduce(
 				(sum, item) => sum + item.price * item.quantity,
 				0
 			);
+			// falta cubrir este caso
 			const updatedItemCount = filteredCart.reduce(
 				(sum, item) => sum + item.quantity,
 				0
@@ -100,6 +102,7 @@ const cartReducer = (state: CartState, action: CartAction): CartState => {
 			const updatedCart = state.cart.map((item) =>
 				item.id === action.payload.id
 					? { ...item, quantity: action.payload.quantity }
+					// falta cubrir este caso
 					: item
 			);
 			const updatedTotal = updatedCart.reduce(
@@ -120,6 +123,7 @@ const cartReducer = (state: CartState, action: CartAction): CartState => {
 		}
 		case Actions.CLEAR_CART_TYPE:
 			return initialState;
+		// falta cubrir este caso
 		default:
 			throw new Error(`Acción desconocida: ${action}`);
 	}

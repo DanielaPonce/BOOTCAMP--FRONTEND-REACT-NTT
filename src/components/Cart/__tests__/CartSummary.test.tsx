@@ -1,3 +1,4 @@
+// si el contenido no es variable o condicionado, o usa servicios un snapshot basta no es necesario agregarle tantos expect
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { jest } from '@jest/globals';
@@ -32,6 +33,7 @@ describe('CartSummary Component', () => {
 			`Total a pagar: S/ ${customTotal.toFixed(2)}`
 		);
 		expect(formattedTotal).toBeInTheDocument();
+		// es lo mismo que la l'inea 34
 		expect(formattedTotal).toHaveTextContent('S/ 987.60');
 	});
 
